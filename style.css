@@ -1,0 +1,315 @@
+*,html {
+    margin: 0;
+    padding: 0; /* biar gak menghalangi */
+}
+
+body {
+        width: 100%;
+        height: 700px;                /* tinggi area */
+        background-image: url("Bag5.jpg");
+        background-size: cover;       /* biar nutup semua area */
+        background-position: center;  /* biar gambar ditengah */
+        background-repeat: no-repeat; /* biar ga ngulang */
+        background-position: center 50px;
+       
+}
+.container-navbar{
+    background-color: rgb(123, 173, 112);
+    width: 100%;
+    height: 100px;
+}
+
+.ul-navbar{
+    display: flex; /* biar vertikal */
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.li-navbar{
+    
+    font-size: 25px;
+    list-style-type: none; /* biar gak ada listnya */
+    padding: 20px;
+    margin: 5px;
+    color : white;
+    font-size: 30px
+
+}
+
+.li-navbar:hover{
+  background-color: rgb(68, 113, 78);
+  transition: .5s ease-in-out;
+  transition-delay: .3s;
+  border-radius: 8px;
+}
+
+.a-navbar{
+  color: white;
+  text-decoration: none;
+  
+}
+
+/* ✨ Animasi muncul dari bawah */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* posisi agak turun */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* balik normal */
+  }
+}
+
+.container-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+
+  /* animasi */
+  opacity: 0; 
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.3s; /* jeda sedikit biar smooth */
+}
+
+.img-content {
+  width: 28%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.5s;  /* foto muncul dulu */
+}
+
+.intro-text {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1.6;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: rgb(50, 75, 59);
+  box-shadow: 0 2px 6px rgba(42, 74, 33, 0.1);
+
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 1s;   /* teks muncul belakangan */
+}
+
+
+.container-footer{
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(76, 119, 76);
+}
+
+.h1-footer{
+    font-size: 35px;
+}
+
+.kotak-footer{
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(76, 119, 76);
+}
+.h2-footer{
+    font-size: 35px;
+}
+
+.hobby-container {
+  display: flex;
+  flex-wrap: wrap;             /* biar bisa turun kalau layar kecil */
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hobby-item {
+  position: relative;          /* penting supaya teks bisa absolute */
+  flex: 1 1 250px;             /* lebar minimum 250px, otomatis menyesuaikan */
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;            /* biar teks nggak keluar area */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hobby-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* teks overlay default: sembunyi di atas */
+.hobby-item p {
+  position: absolute;
+  top: -50px;                   /* sembunyi di luar gambar */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: 0;                   /* transparan dulu */
+  transition: all 0.4s ease;    /* animasi halus */
+}
+
+/* pas hover muncul turun */
+.hobby-item:hover p {
+  top: 10px;                    /* turun masuk gambar */
+  opacity: 1;                   /* jadi terlihat */
+}
+
+
+/* ===================== */
+/* PROFILE SECTION */
+/* ===================== */
+.schedule-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;          /* bikin foto bulat */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.profile-text {
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+}
+
+.profile-text h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #222;
+}
+
+.profile-text p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+/* ===================== */
+/* SCHEDULE TABLE */
+/* ===================== */
+.schedule-container {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.schedule-container h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #333;
+  color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ✨ efek hover baris */
+.schedule-table tr:hover {
+  background-color: #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+/* CONTACT PAGE */
+.contact-container {
+  display: flex;
+  justify-content: center;   /* tengah halaman */
+  align-items: center;
+  gap: 50px;                 /* jarak antara foto & teks */
+  margin-top: 100px;
+}
+
+.contact-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;         /* foto bulat */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: #555;
+  min-width: 28px;
+  text-align: center;
+}
+
+.contact-item:hover {
+  color: #0077b6;
+  cursor: pointer;
+}
+
+/* 📱 Responsive untuk HP */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;    /* jadi atas-bawah */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-info {
+    align-items: center;       /* teks rata tengah */
+  }
+
+  .contact-item {
+    justify-content: center;   /* icon & teks center */
+  }
+}
