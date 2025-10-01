@@ -51,7 +51,7 @@ body {
   
 }
 
-/* ✨ Animasi muncul dari bawah */
+/* Animasi muncul dari bawah */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -172,9 +172,9 @@ body {
 }
 
 
-/* ===================== */
+
 /* PROFILE SECTION */
-/* ===================== */
+
 .schedule-profile {
   display: flex;
   align-items: center;
@@ -209,9 +209,9 @@ body {
   color: #444;
 }
 
-/* ===================== */
+
 /* SCHEDULE TABLE */
-/* ===================== */
+
 .schedule-container {
   text-align: center;
   margin: 40px auto;
@@ -246,7 +246,7 @@ body {
   background-color: #f9f9f9;
 }
 
-/* ✨ efek hover baris */
+/*efek hover baris */
 .schedule-table tr:hover {
   background-color: #e0e0e0;
   transition: background 0.3s ease;
@@ -297,7 +297,7 @@ body {
   cursor: pointer;
 }
 
-/* 📱 Responsive untuk HP */
+/* Responsive untuk HP */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;    /* jadi atas-bawah */
@@ -312,4 +312,49 @@ body {
   .contact-item {
     justify-content: center;   /* icon & teks center */
   }
+}
+
+
+/* Lightbox Popup */
+.lightbox {
+  display: none;               /* hidden dulu */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+/* tombol close */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff4444;
+}
+
+/* animasi zoom */
+@keyframes zoomIn {
+  from {transform: scale(0.5); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
 }
